@@ -1,0 +1,217 @@
+/* Importación de módulos CSS */
+@import url('base.css');
+@import url('componentes.css');
+
+/* =========================================
+   SECCIÓN HECHOS DE LA SERIE (WIKI & DETAILS)
+   ========================================= */
+.wiki-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  margin-bottom: 1.4rem;
+}
+
+.section-tag {
+  display: inline-block;
+  background-color: rgba(201, 24, 30, 0.18);
+  color: var(--acento-ocre);
+  border: 1px solid var(--acento-rojo);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  color: var(--texto-principal);
+  margin-bottom: 0.5rem;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  background-color: var(--acento-rojo);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge-amber {
+  background-color: #8c5a2b;
+}
+
+.meta-text {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+
+/* Desplegable <details> */
+.event-toggle {
+  margin-top: 0.85rem;
+  background-color: #131518;
+  border: 1px solid var(--borde-sutil);
+  border-radius: 6px;
+  padding: 0.75rem 0.95rem;
+}
+
+.event-toggle summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--acento-ocre);
+  font-size: 0.92rem;
+  user-select: none;
+}
+
+.event-toggle summary:hover {
+  color: #ffffff;
+}
+
+.event-toggle p {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.event-toggle ul {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.event-toggle li {
+  margin-bottom: 0.45rem;
+}
+
+.event-toggle li strong {
+  color: var(--texto-principal);
+}
+
+/* Encuesta en hechoslugares.html */
+.vote-box {
+  border: 1px solid var(--borde-sutil);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.vote-box legend {
+  padding: 0 0.5rem;
+  color: var(--acento-ocre);
+  font-weight: 700;
+}
+
+.vote-box label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+/* =========================================
+   FILTRO INTERACTIVO PURO CSS (PC Y MÓVIL)
+   ========================================= */
+.filter-input {
+  display: none;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.filter-btn {
+  background-color: var(--bg-tarjeta);
+  border: 1px solid var(--borde-sutil);
+  color: var(--texto-principal);
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--acento-rojo);
+}
+
+#serie-todos:checked ~ .filter-controls label[for="serie-todos"],
+#serie-inicio:checked ~ .filter-controls label[for="serie-inicio"],
+#serie-comunidades:checked ~ .filter-controls label[for="serie-comunidades"] {
+  background-color: var(--acento-rojo);
+  border-color: var(--acento-rojo);
+  color: #ffffff;
+}
+
+#serie-inicio:checked ~ .seccion-serie-comunidades {
+  display: none;
+}
+
+#serie-comunidades:checked ~ .seccion-serie-inicio {
+  display: none;
+}
+
+/* =========================================
+   ADAPTACIÓN RESPONSIVA (MÓVIL / TABLET)
+   ========================================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.55rem;
+  }
+
+  nav {
+    gap: 0.4rem;
+    padding: 0.65rem 3%;
+  }
+
+  nav a {
+    font-size: 0.88rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  main {
+    width: 94%;
+    margin: 1.5rem auto;
+  }
+
+  .tarjeta-personaje {
+    max-width: 100%;
+  }
+
+  .tarjeta-personaje img {
+    height: 290px;
+  }
+
+  .form-contacto,
+  .community-form {
+    padding: 1.35rem;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+  }
+
+  .filter-btn {
+    text-align: center;
+  }
+}

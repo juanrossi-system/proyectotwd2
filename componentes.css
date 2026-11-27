@@ -1,0 +1,239 @@
+/* =========================================
+   TARJETAS GENERALES Y COLUMNAS
+   ========================================= */
+.columnas-informacion,
+.seccion-temporadas,
+.flex-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.columnas-informacion article,
+.seccion-temporadas article,
+.wiki-card {
+  background-color: var(--bg-tarjeta);
+  border: 1px solid var(--borde-sutil);
+  border-left: 4px solid var(--acento-rojo);
+  border-radius: 8px;
+  padding: 1.35rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  flex: 1 1 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.columnas-informacion article:hover,
+.seccion-temporadas article:hover,
+.wiki-card:hover {
+  transform: translateY(-4px);
+  background-color: var(--bg-tarjeta-hover);
+  box-shadow: 0 8px 20px rgba(201, 24, 30, 0.22);
+}
+
+article h2,
+.wiki-card h3 {
+  color: var(--acento-ocre);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================================
+   TARJETAS DE PERSONAJES (FLEXBOX RESPONSIVO)
+   ========================================= */
+.grid-personajes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.tarjeta-personaje {
+  background-color: var(--bg-tarjeta);
+  border: 1px solid var(--borde-sutil);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  /* Flex + width + max-width: 3 por fila en PC, 2 en tablet, 1 en celular */
+  flex: 1 1 260px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-personaje:hover {
+  transform: translateY(-5px);
+  border-color: var(--acento-rojo);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.3);
+}
+
+.tarjeta-personaje h2 {
+  color: var(--texto-principal);
+  font-size: 1.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.tarjeta-personaje img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 6px;
+  margin-bottom: 0.9rem;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta-personaje:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.tarjeta-personaje p {
+  color: var(--acento-ocre);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+aside {
+  background-color: var(--bg-tarjeta);
+  border-left: 4px solid var(--acento-ocre);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  margin-top: 1rem;
+}
+
+aside h3 {
+  color: var(--acento-ocre);
+  margin-bottom: 0.4rem;
+}
+
+/* =========================================
+   VIDEOS IFRAME
+   ========================================= */
+.video-contenedor {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--borde-sutil);
+}
+
+.video-contenedor iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================
+   FORMULARIOS Y BOTONES
+   ========================================= */
+.form-contacto,
+.community-form {
+  background-color: var(--bg-tarjeta);
+  border: 1px solid var(--borde-sutil);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 650px;
+  margin: 1.5rem auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--texto-principal);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background-color: #0b0c0e;
+  border: 1px solid var(--borde-sutil);
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--acento-rojo-hover);
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.4);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-enviar,
+.btn-primary,
+.btn-retorno {
+  display: inline-block;
+  background: linear-gradient(180deg, var(--acento-rojo-hover) 0%, var(--acento-rojo) 100%);
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  transition: filter 0.25s ease, transform 0.2s ease;
+}
+
+.btn-enviar,
+.btn-primary {
+  width: 100%;
+}
+
+.btn-enviar:hover,
+.btn-primary:hover,
+.btn-retorno:hover {
+  filter: brightness(1.12);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.caja-mensaje {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: var(--bg-tarjeta);
+  border: 1px solid var(--borde-sutil);
+  border-top: 4px solid var(--acento-rojo);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.caja-mensaje h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  color: var(--texto-principal);
+}
